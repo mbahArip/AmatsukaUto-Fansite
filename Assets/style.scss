@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kosugi', sans-serif;
+}
+
+div.main {
+    width: 100vw;
+    height: 100vh;
+
+    & img {
+        width: 100%;
+        // height: auto
+        object-fit: cover;
+    }
+}
