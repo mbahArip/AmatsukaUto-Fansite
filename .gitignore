@@ -4,6 +4,7 @@ node_modules/
 # Compiled source #
 ###################
 *.md
+.psd
 
 # Packages #
 ############
