@@ -3,20 +3,541 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  outline: none;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
 body {
-  font-family: 'Kosugi', sans-serif;
+  font-family: 'M PLUS 1p', sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-image: url(img/bg_pattern.png);
+  background-repeat: repeat;
 }
 
-div.main {
+div.noMobile {
   width: 100vw;
   height: 100vh;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  font-size: 1rem;
 }
 
-div.main img {
-  width: 100%;
+nav {
+  width: 100vw;
+  height: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  -webkit-transition: background-color .25s, height .25s;
+  transition: background-color .25s, height .25s;
+  top: 0;
+  z-index: 5;
+}
+
+nav img {
+  max-width: 15vw;
   -o-object-fit: cover;
      object-fit: cover;
+  padding: .5rem;
+  margin: 1rem;
+  -webkit-filter: drop-shadow(0 0 5px white);
+          filter: drop-shadow(0 0 5px white);
+  -webkit-transition: max-width .25s;
+  transition: max-width .25s;
+}
+
+nav li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-left: 2rem;
+}
+
+nav li ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1rem;
+  font-size: 32px;
+}
+
+nav li ul a {
+  width: auto;
+  padding: 0 1rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  -webkit-filter: drop-shadow(0 0 10px white);
+          filter: drop-shadow(0 0 10px white);
+  -webkit-transition: color .25s;
+  transition: color .25s;
+}
+
+nav li ul a:hover {
+  color: #67b0e1;
+}
+
+nav li ul a:hover .underline {
+  opacity: 1;
+  top: 0px;
+}
+
+nav li ul .nav-home {
+  color: #565068;
+  font-weight: 800;
+}
+
+nav li ul .underline {
+  width: auto;
+  height: 3px;
+  border-radius: 15px;
+  opacity: 0;
+  position: relative;
+  top: 5px;
+  background-color: #565068;
+  -webkit-transition: opacity .25s, top .25s;
+  transition: opacity .25s, top .25s;
+}
+
+div#home {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  margin: auto;
+}
+
+div#home img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 0;
+     object-position: 0 0;
+  margin: auto;
+  -webkit-box-shadow: 0 10px 25px white;
+          box-shadow: 0 10px 25px white;
+  position: absolute;
+  z-index: 1;
+}
+
+div#home li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div#home li ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+  top: 70vh;
+  left: 95%;
+  z-index: 2;
+}
+
+div#home li ul a {
+  width: 25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  left: 0;
+  -webkit-transition: background-color .25s, color .25s, left .25s;
+  transition: background-color .25s, color .25s, left .25s;
+}
+
+div#home li ul a:hover {
+  left: -15rem;
+}
+
+div#home li ul a i {
+  margin-right: 2rem;
+}
+
+div#home li ul .btn-twitter {
+  background-color: #1DA1F2;
+}
+
+div#home li ul .btn-twitter:hover {
+  background-color: #147ab9;
+  color: #f0f0f0;
+}
+
+div#home li ul .btn-youtube {
+  background-color: #FF0000;
+}
+
+div#home li ul .btn-youtube:hover {
+  background-color: #be0303;
+  color: #f0f0f0;
+}
+
+div#profile {
+  width: 70vw;
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 35vh auto 10vh auto;
+  padding: 3rem;
+  opacity: 0;
+  border: 5px solid #1DA1F2;
+  border-radius: 30px;
+  background-color: rgba(213, 238, 255, 0.7);
+  position: relative;
+  top: 5rem;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  -webkit-box-shadow: 0 0 25px white;
+          box-shadow: 0 0 25px white;
+}
+
+div#profile img.profileUto {
+  height: 200%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  overflow: visible;
+  position: relative;
+  bottom: 5rem;
+}
+
+div#profile .text {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 0rem;
+  text-align: center;
+  font-size: 32px;
+  position: relative;
+  bottom: 7rem;
+}
+
+div#profile .text h1 {
+  font-size: 72px;
+  font-family: 'Hachi Maru Pop', cursive;
+  margin-bottom: -1.5rem;
+}
+
+div#profile .text h2 {
+  margin-bottom: 4rem;
+  font-family: 'Hachi Maru Pop', cursive;
+}
+
+div#profile .text table {
+  text-align: start;
+  margin-left: 25%;
+}
+
+div#profile .text table .bold {
+  font-weight: 600;
+}
+
+div#profile .text table .mark img {
+  width: 48px;
+  height: 48px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1)) brightness(10);
+          filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1)) brightness(10);
+}
+
+div#profile .text a {
+  color: #565068;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+div#youtube {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+div#youtube .bg {
+  width: 100vw;
+  height: 135vh;
+  background-color: white;
+  opacity: .9;
+  -webkit-transform: skewY(-5deg);
+          transform: skewY(-5deg);
+  position: absolute;
+  top: 225vh;
+  z-index: 1;
+  -webkit-box-shadow: 0 0 25px white;
+          box-shadow: 0 0 25px white;
+}
+
+div#youtube .content {
+  position: relative;
+  z-index: 2;
+  top: 20rem;
+  opacity: 0;
+  padding: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  text-align: center;
+}
+
+div#youtube .content h1 {
+  font-size: 72px;
+  font-family: 'Hachi Maru Pop', cursive;
+  margin-bottom: 5vh;
+}
+
+div#youtube .content .list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  grid-gap: 15px;
+  width: 60vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+}
+
+div#youtube .content .list iframe {
+  margin-bottom: 10vh;
+}
+
+div#about {
+  width: 100vw;
+  height: 40vh;
+  position: absolute;
+  top: 350vh;
+  z-index: 3;
+  -webkit-box-shadow: 0 0px 25px rgba(0, 0, 0, 0.9);
+          box-shadow: 0 0px 25px rgba(0, 0, 0, 0.9);
+  margin: auto;
+}
+
+div#about .top {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #242424;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  -webkit-transition: background-color .25s;
+  transition: background-color .25s;
+  text-decoration: none;
+}
+
+div#about .top:hover {
+  background-color: #303030;
+}
+
+div#about .top .top-symbol {
+  font-size: 32px;
+}
+
+div#about .content {
+  width: 100%;
+  height: auto;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div#about .content h1 {
+  font-size: 48px;
+}
+
+div#about .content .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 20px;
+  margin: 2rem auto;
+}
+
+div#about .content .text .divider {
+  height: 10rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  border-left: 2px solid white;
+}
+
+div#about .content .text p {
+  width: 35vw;
+}
+
+div#about .content .contact {
+  margin: .5rem auto;
+}
+
+div#about .content .contact a {
+  text-decoration: none;
+  color: white;
+  font-size: 48px;
+}
+
+@media only screen and (min-width: 2000px) {
+  div#home li ul {
+    left: 96%;
+  }
+  div#profile {
+    margin: 70vh auto 10vh;
+  }
+  div#youtube .bg {
+    top: 260vh;
+  }
+  div#about {
+    top: 380vh;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  div#home img {
+    width: auto;
+    height: 100%;
+  }
+  div#home li ul {
+    left: 93%;
+  }
+  div#profile .text {
+    font-size: 24px;
+  }
+  div#youtube .content .list iframe {
+    width: 460px !important;
+    height: 215px !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  * {
+    overflow: hidden;
+  }
+  div.noMobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  nav {
+    height: 5%;
+  }
+  div#home img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: -90vw 0;
+       object-position: -90vw 0;
+  }
+  div#home li ul {
+    top: 75vh;
+    left: 65%;
+  }
+  div#profile {
+    width: 90vw;
+    padding: 0;
+  }
+  div#profile img {
+    height: 150%;
+  }
+  div#profile .text {
+    font-size: 20px !important;
+  }
+  div#youtube {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
 }
 /*# sourceMappingURL=style.css.map */
