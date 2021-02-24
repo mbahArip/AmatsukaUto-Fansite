@@ -446,7 +446,7 @@ div#about .content .text {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin: 2rem auto;
 }
 
