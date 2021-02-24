@@ -269,13 +269,13 @@ div#profile .text {
           flex-direction: column;
   margin-left: 0rem;
   text-align: center;
-  font-size: 32px;
+  font-size: 2rem;
   position: relative;
   bottom: 7rem;
 }
 
 div#profile .text h1 {
-  font-size: 72px;
+  font-size: 4rem;
   font-family: 'Hachi Maru Pop', cursive;
   margin-bottom: -1.5rem;
 }
@@ -347,7 +347,7 @@ div#youtube .content {
 }
 
 div#youtube .content h1 {
-  font-size: 72px;
+  font-size: 4rem;
   font-family: 'Hachi Maru Pop', cursive;
   margin-bottom: 5vh;
 }
@@ -397,7 +397,7 @@ div#about .top {
   border-bottom: 1px solid black;
   cursor: pointer;
   color: white;
-  font-size: 16px;
+  font-size: 2rem;
   -webkit-transition: background-color .25s;
   transition: background-color .25s;
   text-decoration: none;
@@ -409,6 +409,7 @@ div#about .top:hover {
 
 div#about .top .top-symbol {
   font-size: 32px;
+  margin-right: 1rem;
 }
 
 div#about .content {
@@ -434,7 +435,7 @@ div#about .content {
 }
 
 div#about .content h1 {
-  font-size: 48px;
+  font-size: 3rem;
 }
 
 div#about .content .text {
@@ -445,7 +446,7 @@ div#about .content .text {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  font-size: 20px;
+  font-size: 1.5rem;
   margin: 2rem auto;
 }
 
@@ -495,6 +496,7 @@ div#about .content .contact a {
   }
   div#profile .text {
     font-size: 24px;
+    bottom: 6rem;
   }
   div#youtube .content .list iframe {
     width: 460px !important;

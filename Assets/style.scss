@@ -209,12 +209,12 @@ div#profile {
         margin-left: 0rem;
         text-align: center;
 
-        font-size: 32px;
+        font-size: 2rem;
         position: relative;
         bottom: 7rem;
 
         & h1 {
-            font-size: 72px;
+            font-size: 4rem;
             font-family: 'Hachi Maru Pop', cursive;
             margin-bottom: -1.5rem;
         }
@@ -277,7 +277,7 @@ div#youtube {
         text-align: center;
         
         & h1 {
-            font-size: 72px;
+            font-size: 4rem;
             font-family: 'Hachi Maru Pop', cursive;
             margin-bottom: 5vh;
         }
@@ -316,7 +316,7 @@ div#about {
         border-top: 1px solid black; border-bottom: 1px solid black;
         cursor: pointer;
         color: white;
-        font-size: 16px;
+        font-size: 2rem;
         transition: background-color .25s;
         text-decoration: none;
 
@@ -326,6 +326,7 @@ div#about {
 
         & .top-symbol {
             font-size: 32px;
+            margin-right: 1rem;
         }
     }
 
@@ -342,13 +343,13 @@ div#about {
         flex-direction: column;
 
         & h1 {
-            font-size: 48px;
+            font-size: 3rem;
         }
 
         & .text {
             display: flex;
             flex-direction: row;
-            font-size: 20px;
+            font-size: 1.5rem;
             margin: 2rem auto;
 
             & .divider {
@@ -414,6 +415,7 @@ div#about {
         
         & .text {
             font-size: 24px;
+            bottom: 6rem;
         }
     }
 
